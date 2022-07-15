@@ -1,0 +1,33 @@
+<!-- String interpolation -->
+{{vn}}
+<div>
+  <!-- property binding -->
+  <img [src]="imageUrl" style="width:400px;height:200px;">
+  <!-- String interpolation + property binding --> 
+  <h3 [hidden] = "forgot">{{en}}</h3>
+  <!-- event binding -->
+  <button (click) = "forgotToggle()">Hide</button>
+</div>
+
+<!-- event -->
+<div>
+  <br>
+  <h3>Your name is: {{ name }}</h3>
+  <input placeholder="Enter username type 1"(keyup)="showEvent($event);" >
+</div>
+
+<!-- ways binding -->
+<div>
+  <br>
+  <h3 [style.color]="name_clone.length % 2 === 0 ? 'red' : 'green'">
+    Your name is: {{ name_clone }}
+  </h3>
+  <input size="50" placeholder="Enter username two ways binding" [(ngModel)]="name_clone" >
+</div>
+
+<!-- template reference variable -->
+<div>
+  <br>
+  <input size="50" placeholder="Enter username template reference variable" [(ngModel)]="name_1" #Username>
+  <h3><code>Your name is: {{Username.value || json}}</code></h3>
+</div>
